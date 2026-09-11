@@ -53,7 +53,7 @@ Esse SaaS foi pensado e desenvolvida para proporcionar uma experiência simples 
 
 *Pré-requisitos*
 Antes de executar o projeto em seu computador local, é necessário ter instalado:
-- Onde.js
+- node.js
 - Git
 - Docker
 
@@ -75,7 +75,7 @@ Antes de executar o projeto em seu computador local, é necessário ter instalad
 
 5. Execute o projeto
 
-> npm rum dev
+> npm run dev
 
 ## Status
 
