@@ -49,7 +49,19 @@ Esse SaaS foi pensado e desenvolvida para proporcionar uma experiência simples 
 - Maria Eduarda (@eduardarf15)
 - Marx A.(@marx40)
 
+## Como executar 
+
+```typescript
+*Pré-requisitos*
+Antes de executar o projeto em seu computador local, é necessário ter instalado:
+- Onde.js
+- Git
+- Docker
+
+```
+
 ## Status
+
 
 > Em desenvolvimento 
 
