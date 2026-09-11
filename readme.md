@@ -1,4 +1,6 @@
-# Focus Clínica 
+# ```javascript
+console.log("Focus Clínica")
+```
 
 Aplicativo desenvolvido para facilitar a experiência do cliente no atendimento e agendamento de consultas da Clínica Focus. 
 
@@ -41,4 +43,6 @@ Esse SaaS foi pensado e desenvolvida para proporcionar uma experiência simples 
 5. Selecione a data
 6. Confirma o agendamento 
 7. O sistema exibe a confirmação da consulta
+
+
 
