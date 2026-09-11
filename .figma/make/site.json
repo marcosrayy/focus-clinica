@@ -1,0 +1,10 @@
+{
+  "description": "Offers an intuitive, visually enhanced homepage with a sleek glass effect to improve user experience and engagement.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
