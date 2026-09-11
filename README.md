@@ -51,14 +51,12 @@ Esse SaaS foi pensado e desenvolvida para proporcionar uma experiência simples 
 
 ## Como executar 
 
-```typescript
 *Pré-requisitos*
 Antes de executar o projeto em seu computador local, é necessário ter instalado:
 - Onde.js
 - Git
 - Docker
 
-```
 
 ## Status
 
