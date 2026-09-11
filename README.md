@@ -57,6 +57,25 @@ Antes de executar o projeto em seu computador local, é necessário ter instalad
 - Git
 - Docker
 
+1. Clone o repositório 
+
+> git clone URL_DO_REPOSITORIO
+
+2. Acesse a pasta do projeto
+
+> cd focus-clinica
+
+3. Instale as dependências
+
+> npm install
+
+4. Configure as variáveis do ambiente
+
+> Crie um arquivo .env na raiz do projeto e configure as informações necessárias para a aplicação. 
+
+5. Execute o projeto
+
+> npm rum dev
 
 ## Status
 
