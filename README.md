@@ -18,7 +18,7 @@ Entre as principais ações estão:
 - Visualizar consultas 
 - Gerênciar seus agendamentos
 
-## interface do cliente 
+## Interface do cliente 
 
 Esse SaaS foi pensado e desenvolvida para proporcionar uma experiência simples e intuitiva aos clientes da Focus Clínica.
 
