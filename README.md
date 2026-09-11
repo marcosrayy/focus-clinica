@@ -53,11 +53,14 @@ Esse SaaS foi pensado e desenvolvida para proporcionar uma experiência simples 
 
 *Pré-requisitos*
 Antes de executar o projeto em seu computador local, é necessário ter instalado:
-- Onde.js
+- Node.js
 - Git
 - Docker
 
-
+1. Clone o repositório 
+```python
+print('git clone url_do_repositorio')
+```
 ## Status
 
 
