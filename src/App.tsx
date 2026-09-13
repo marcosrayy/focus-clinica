@@ -1,5 +1,6 @@
 import { useState } from "react";
 import bgImage from "@/imports/image-3.png";
+import newLogo from "@/imports/focuslogo.png";
 import Dashboard from "@/Dashboard";
 
 const floatingIcons = [
