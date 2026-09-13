@@ -7,6 +7,7 @@
     "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "bundler",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     },
@@ -20,7 +21,8 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "types": ["node", "vite/client"],
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
+    "ignoreDeprecations": "6.0"
   },
   "include": ["src", "vite.config.ts"]
 }
