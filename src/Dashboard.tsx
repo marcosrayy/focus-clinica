@@ -831,14 +831,14 @@ function ConfigPage() {
 
         <div className="flex items-start md:items-center gap-4 md:gap-6 flex-wrap md:flex-nowrap">
           <div className="relative flex-shrink-0">
-            <Avatar name="Focus Clinica" sizePx={64} />
+            <Avatar name="Focus Tech" sizePx={64} />
             <button className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white flex items-center justify-center cursor-pointer" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.15)", border: "1.5px solid #e2e8f0", color: "#0d9488" }}>
               <IconEdit size={11} />
             </button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 w-full">
             {[
-              { label: "Nome", value: "Focus Clinica", extra: <span className="text-xs px-2 py-0.5 rounded-full mt-1.5 inline-block" style={{ background: "#f0fdf9", color: "#0d9488", fontWeight: 600 }}>Usuário</span> },
+              { label: "Nome", value: "Focus Tech", extra: <span className="text-xs px-2 py-0.5 rounded-full mt-1.5 inline-block" style={{ background: "#f0fdf9", color: "#0d9488", fontWeight: 600 }}>Usuário</span> },
               { label: "E-mail", value: "seuemail@gmail.com" },
               { label: "Telefone", value: "(85) 98068-7777" },
             ].map((item) => (

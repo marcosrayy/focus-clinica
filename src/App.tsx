@@ -159,7 +159,7 @@ export default function App() {
                 textShadow: "0 2px 24px rgba(0,0,0,0.22)",
               }}
             >
-              Clin Focus
+             Focus Clinica
             </h1>
 
             {/* Subtitle */}
@@ -171,7 +171,8 @@ export default function App() {
                 fontWeight: 400,
               }}
             >
-              Gerencie agendamentos, consultas e informações de saúde com praticidade e segurança.
+              Agende consultas e acompanhe seus atendimentos de forma simples e segura.
+
             </p>
 
             {/* CTA button */}
