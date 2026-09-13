@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import type { ReactNode } from "react";
+import logoImage from "@/imports/focuslogo.png";
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 
@@ -167,51 +168,19 @@ function IconSun({ size = 17 }: { size?: number }) {
 // ─── Logo Mark ────────────────────────────────────────────────────────────────
 
 function LogoMark({ size = 30 }: { size?: number }) {
-  const dk = "#1f5045";
-  const lt = "#cdeeee";
-  // viewBox 100×116 — proportions traced from the Focus Clínica logo
   return (
-    <svg width={size} height={size} viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-      {/* ── Dark green outer F ── */}
-
-      {/* Left vertical bar */}
-      <rect x="2" y="2" width="20" height="90" rx="3" fill={dk} />
-
-      {/* Top horizontal bar — right end is a rounded terminal (pill cap) */}
-      <rect x="2" y="2" width="80" height="20" rx="10" fill={dk} />
-      {/* Fill the left rounded corners so it sits flush with the vertical bar */}
-      <rect x="2" y="2" width="20" height="20" fill={dk} />
-
-      {/* Middle crossbar */}
-      <rect x="2" y="48" width="56" height="18" rx="3" fill={dk} />
-
-      {/* Bottom foot — curves right from the base of the left bar */}
-      <path
-        d="M22 76 Q22 104 50 104"
-        stroke={dk} strokeWidth="20" strokeLinecap="round" fill="none"
-      />
-
-      {/* ── Light teal inner figure (person inside the F) ── */}
-
-      {/* Inner vertical bar (body) */}
-      <rect x="22" y="22" width="14" height="70" rx="2" fill={lt} />
-
-      {/* Inner top bar (raised arm) */}
-      <rect x="22" y="22" width="56" height="14" rx="7" fill={lt} />
-      {/* Flush left corner */}
-      <rect x="22" y="22" width="14" height="14" fill={lt} />
-
-      {/* Inner bottom foot curve (leg in motion) */}
-      <path
-        d="M36 80 Q36 100 54 100"
-        stroke={lt} strokeWidth="12" strokeLinecap="round" fill="none"
-      />
-
-      {/* Circle — head of the figure */}
-      <circle cx="64" cy="48" r="13" fill={lt} />
-
-    </svg>
+    <img
+      src={logoImage}
+      alt="Focus Clínica"
+      style={{
+        width: size * 1.8,
+        height: size * 1.8,
+        objectFit: "cover",
+        display: "block",
+        borderRadius: "50%",
+        overflow: "hidden",
+      }}
+    />
   );
 }
 
@@ -382,7 +351,7 @@ function Sidebar({
             <LogoMark size={30} />
           </div>
           <div>
-            <span className="font-bold text-white" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1.1rem", letterSpacing: "-0.01em" }}>Clin Focus</span>
+            <span className="font-bold text-white" style={{ fontFamily: "'Outfit', sans-serif", fontSize: "1.1rem", letterSpacing: "-0.01em" }}>Focus Clínica</span>
             <p className="text-xs" style={{ color: t.sidebarLabel, marginTop: 1 }}>Sistema clínico</p>
           </div>
           {isMobile && (
@@ -422,10 +391,10 @@ function Sidebar({
 
         <div className="m-3 p-4 rounded-2xl" style={{ background: t.sidebarUserCard, border: `1px solid ${t.sidebarUserBorder}` }}>
           <div className="flex items-center gap-3 mb-3">
-            <Avatar name="Marcos Ray" sizePx={36} />
+            <Avatar name="Focus Tech" sizePx={36} />
             <div className="min-w-0">
-              <p className="text-sm font-semibold text-white truncate">Marcos Ray</p>
-              <p className="text-xs" style={{ color: t.sidebarLabel }}>Administrador</p>
+              <p className="text-sm font-semibold text-white truncate">Focus Tech</p>
+              <p className="text-xs" style={{ color: t.sidebarLabel }}>Usuário</p>
             </div>
           </div>
           <button
@@ -504,10 +473,10 @@ function Header({ onMenuClick }: { onMenuClick: () => void }) {
           onMouseEnter={(e) => { (e.currentTarget as HTMLElement).style.background = "rgba(255,255,255,0.07)"; }}
           onMouseLeave={(e) => { (e.currentTarget as HTMLElement).style.background = "transparent"; }}
         >
-          <Avatar name="Marcos Ray" sizePx={30} />
+          <Avatar name="Focus Tech" sizePx={30} />
           <div className="hidden md:block">
-            <p className="text-xs font-semibold leading-tight" style={{ color: t.headerText }}>Marcos Ray</p>
-            <p style={{ fontSize: "10px", color: t.headerMuted }}>Administrador</p>
+            <p className="text-xs font-semibold leading-tight" style={{ color: t.headerText }}>Focus Tech</p>
+            <p style={{ fontSize: "10px", color: t.headerMuted }}>Usuário</p>
           </div>
           <span style={{ color: t.headerMuted }} className="hidden md:block"><IconChevronDown /></span>
         </div>
@@ -709,9 +678,9 @@ function HomePage() {
       <div className="flex items-start justify-between flex-wrap gap-3">
         <div>
           <h1 className="text-xl md:text-2xl font-bold" style={{ color: t.textPrimary, fontFamily: "'Outfit', sans-serif", letterSpacing: "-0.01em" }}>
-            Bom dia, Marcos 👋
+            Bem vindo, Focus!
           </h1>
-          <p className="text-sm mt-1" style={{ color: t.textFaint }}>Quinta-feira, 10 de setembro de 2026 · 4 consultas hoje</p>
+          <p className="text-sm mt-1" style={{ color: t.textFaint }}>Segunda-feira, 15 de setembro de 2026</p>
         </div>
         <div className="flex items-center gap-2">
           <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
@@ -721,10 +690,10 @@ function HomePage() {
 
       {/* KPI row — 2 cols on mobile, 4 on desktop */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        <KpiCard label="Total de pacientes" value="245" sublabel="Pacientes cadastrados" icon={<IconUsers />} accentColor="#0d9488" trend="+12%" />
-        <KpiCard label="Na fila agora" value="3" sublabel="Aguardando atendimento" icon={<IconClock />} accentColor="#0d9488" />
-        <KpiCard label="Agendamentos" value="1" sublabel="Consulta pendente" icon={<IconCalendarCheck />} accentColor="#0d9488" />
-        <KpiCard label="Próximo" value="09:30" sublabel="Maria Silva · Clínica Geral" icon={<IconClock />} accentColor="#0d9488" />
+        <KpiCard label="Próxima Consulta" value="09:30" sublabel="Maria Silva · Clínica Geral" icon={<IconCalendarCheck />} accentColor="#0d9488" />
+        <KpiCard label="Consultas este mês" value="3" sublabel="2 realizadas • 1 próxima" icon={<IconCalendar />} accentColor="#0d9488" />
+        <KpiCard label="Histórico de Consultas" value="5" sublabel="Consultas realizadas" icon={<IconCalendarCheck />} accentColor="#0d9488" />
+        <KpiCard label="Agendar próxima consulta" value="NOVO" sublabel="Marcar consulta com especialista" icon={<IconClock />} accentColor="#0d9488" />
       </div>
 
       {/* Calendar + Notifications — stack on mobile */}
@@ -862,15 +831,15 @@ function ConfigPage() {
 
         <div className="flex items-start md:items-center gap-4 md:gap-6 flex-wrap md:flex-nowrap">
           <div className="relative flex-shrink-0">
-            <Avatar name="Marcos Ray Rodrigues Veras" sizePx={64} />
+            <Avatar name="Focus Clinica" sizePx={64} />
             <button className="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-white flex items-center justify-center cursor-pointer" style={{ boxShadow: "0 2px 8px rgba(0,0,0,0.15)", border: "1.5px solid #e2e8f0", color: "#0d9488" }}>
               <IconEdit size={11} />
             </button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 flex-1 w-full">
             {[
-              { label: "Nome", value: "Marcos Ray Rodrigues Veras", extra: <span className="text-xs px-2 py-0.5 rounded-full mt-1.5 inline-block" style={{ background: "#f0fdf9", color: "#0d9488", fontWeight: 600 }}>Administrador</span> },
-              { label: "E-mail", value: "marcosray@gmail.com" },
+              { label: "Nome", value: "Focus Clinica", extra: <span className="text-xs px-2 py-0.5 rounded-full mt-1.5 inline-block" style={{ background: "#f0fdf9", color: "#0d9488", fontWeight: 600 }}>Usuário</span> },
+              { label: "E-mail", value: "seuemail@gmail.com" },
               { label: "Telefone", value: "(85) 98068-7777" },
             ].map((item) => (
               <div key={item.label}>
@@ -899,7 +868,7 @@ function ConfigPage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4">
           {[
-            { label: "Nome da clínica", value: "Clin Focus" },
+            { label: "Nome da clínica", value: "Focus Clínica" },
             { label: "Endereço", value: "Av. Beira Mar, 123 – Fortaleza, CE" },
             { label: "Telefone", value: "(85) 4002-9922" },
             { label: "Horário", value: "Seg–Sex 07h–19h · Sáb 07h–13h" },
