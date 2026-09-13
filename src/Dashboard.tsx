@@ -487,14 +487,15 @@ function Header({ onMenuClick }: { onMenuClick: () => void }) {
 
 // ─── KPI Card ─────────────────────────────────────────────────────────────────
 
-function KpiCard({ label, value, sublabel, icon, accentColor, trend }: {
-  label: string; value: string; sublabel: string; icon: ReactNode; accentColor: string; trend?: string;
+function KpiCard({ label, value, sublabel, icon, accentColor, trend, onClick }: {
+  label: string; value: string; sublabel: string; icon: ReactNode; accentColor: string; trend?: string; onClick?: () => void;
 }) {
   const { t } = useTheme();
   return (
     <div
       className="rounded-2xl p-5 flex flex-col gap-4 relative overflow-hidden h-full"
-      style={{ background: t.kpiBg, boxShadow: t.shadow, border: `1px solid ${t.border}` }}
+      style={{ background: t.kpiBg, boxShadow: t.shadow, border: `1px solid ${t.border}`,  cursor: onClick ? "pointer" : "default", }}
+      onClick={onClick}
     >
       <div className="absolute top-0 left-0 right-0 h-0.5" style={{ background: accentColor }} />
       <div className="flex items-start justify-between">
@@ -671,7 +672,11 @@ function AppointmentTable({ rows, title, count }: { rows: typeof APPOINTMENTS; t
 
 // ─── Pages ────────────────────────────────────────────────────────────────────
 
-function HomePage() {
+function HomePage({
+  onNavigate,
+}: {
+  onNavigate: (page: Page) => void;
+}) {
   const { t } = useTheme();
   return (
     <div className="flex flex-col gap-6 md:gap-7">
@@ -693,7 +698,7 @@ function HomePage() {
         <KpiCard label="Próxima Consulta" value="09:30" sublabel="Maria Silva · Clínica Geral" icon={<IconCalendarCheck />} accentColor="#0d9488" />
         <KpiCard label="Consultas este mês" value="3" sublabel="2 realizadas • 1 próxima" icon={<IconCalendar />} accentColor="#0d9488" />
         <KpiCard label="Histórico de Consultas" value="5" sublabel="Consultas realizadas" icon={<IconCalendarCheck />} accentColor="#0d9488" />
-        <KpiCard label="Agendar próxima consulta" value="NOVO" sublabel="Marcar consulta com especialista" icon={<IconClock />} accentColor="#0d9488" />
+        <KpiCard label="Agendar próxima consulta" value="NOVO" sublabel="Marcar consulta com especialista" icon={<IconClock />} accentColor="#0d9488" onClick={() => onNavigate("agendamentos")} />
       </div>
 
       {/* Calendar + Notifications — stack on mobile */}
@@ -1173,7 +1178,9 @@ export default function Dashboard({ onLogout }: DashboardProps) {
         <div className="flex-1 flex flex-col min-w-0">
           <Header onMenuClick={() => setSidebarOpen((o) => !o)} />
           <main className="flex-1 overflow-auto p-4 md:p-6 lg:p-7">
-            {page === "home" && <HomePage />}
+            {page === "home" && (
+  <HomePage onNavigate={setPage} />
+)}
             {page === "agendamentos" && (
               <AgendamentosPage
                 onNovoAtendimento={() => setModal("novo-atendimento")}
