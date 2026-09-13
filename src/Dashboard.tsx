@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useContext } from "react";
 import type { ReactNode } from "react";
+import logoImage from "@/imports/focuslogo.png";
 
 // ─── Theme ────────────────────────────────────────────────────────────────────
 
@@ -167,51 +168,19 @@ function IconSun({ size = 17 }: { size?: number }) {
 // ─── Logo Mark ────────────────────────────────────────────────────────────────
 
 function LogoMark({ size = 30 }: { size?: number }) {
-  const dk = "#1f5045";
-  const lt = "#cdeeee";
-  // viewBox 100×116 — proportions traced from the Focus Clínica logo
   return (
-    <svg width={size} height={size} viewBox="0 0 100 116" fill="none" xmlns="http://www.w3.org/2000/svg">
-
-      {/* ── Dark green outer F ── */}
-
-      {/* Left vertical bar */}
-      <rect x="2" y="2" width="20" height="90" rx="3" fill={dk} />
-
-      {/* Top horizontal bar — right end is a rounded terminal (pill cap) */}
-      <rect x="2" y="2" width="80" height="20" rx="10" fill={dk} />
-      {/* Fill the left rounded corners so it sits flush with the vertical bar */}
-      <rect x="2" y="2" width="20" height="20" fill={dk} />
-
-      {/* Middle crossbar */}
-      <rect x="2" y="48" width="56" height="18" rx="3" fill={dk} />
-
-      {/* Bottom foot — curves right from the base of the left bar */}
-      <path
-        d="M22 76 Q22 104 50 104"
-        stroke={dk} strokeWidth="20" strokeLinecap="round" fill="none"
-      />
-
-      {/* ── Light teal inner figure (person inside the F) ── */}
-
-      {/* Inner vertical bar (body) */}
-      <rect x="22" y="22" width="14" height="70" rx="2" fill={lt} />
-
-      {/* Inner top bar (raised arm) */}
-      <rect x="22" y="22" width="56" height="14" rx="7" fill={lt} />
-      {/* Flush left corner */}
-      <rect x="22" y="22" width="14" height="14" fill={lt} />
-
-      {/* Inner bottom foot curve (leg in motion) */}
-      <path
-        d="M36 80 Q36 100 54 100"
-        stroke={lt} strokeWidth="12" strokeLinecap="round" fill="none"
-      />
-
-      {/* Circle — head of the figure */}
-      <circle cx="64" cy="48" r="13" fill={lt} />
-
-    </svg>
+    <img
+      src={logoImage}
+      alt="Focus Clínica"
+      style={{
+        width: size * 1.8,
+        height: size * 1.8,
+        objectFit: "cover",
+        display: "block",
+        borderRadius: "50%",
+        overflow: "hidden",
+      }}
+    />
   );
 }
 
