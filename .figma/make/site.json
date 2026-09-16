@@ -4,7 +4,7 @@
     "index": false
   },
   "icons": {
-    "icon": "/src/imports/focuslogo.png"
+    "icon": "/favicon.png"
   },
   "accessibility": {
     "addBypassLinks": false,
